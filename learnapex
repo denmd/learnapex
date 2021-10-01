@@ -1,0 +1,58 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(App());
+}
+
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue.shade900,
+          leading: IconButton(
+            icon: Icon(Icons.menu_open_sharp),
+            onPressed: () {},
+          ),
+          title: Text("DASHBOARD"),
+          elevation: 0,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.notifications_active_outlined),
+              onPressed: () {},
+            ),
+          ],
+        ),
+        body: Container(child: BasicWidget()),
+      ),
+    );
+  }
+}
+
+class BasicWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: 130,
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade900,
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(36),
+                        bottomRight: Radius.circular(36)),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
